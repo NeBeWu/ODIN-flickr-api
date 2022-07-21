@@ -1,0 +1,14 @@
+<h1>Flickr photos</h1>
+<%= form_with url: '/', method: :get do |form| %>
+  <div>
+    <%= form.text_field :user_id, placeholder: 'User id' %>
+  </div>
+  <div>
+    <%= form.submit 'Search' %>
+  </div>
+<% end %>
+<% @list&.each do |photo| %>
+  <div>
+    <img src="<%= FlickRaw.url_m(photo) %>" alt=""> 
+  </div>
+<% end %>
